@@ -17,6 +17,10 @@
 # Boston, MA 02110-1301, USA.
 #
 
+# apache-thrift requires automake 1.14 or greater,
+# base verion of autoconf on centOS6 is 1.11
 category: baseline
-satisfy_deb: automake
-satisfy_rpm: automake
+satisfy_deb: automake >= 1.14
+satisfy_rpm: automake >= 1.14
+source: wget://http://ftp.gnu.org/gnu/automake/automake-1.14.tar.gz
+inherit: autoconf
