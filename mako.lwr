@@ -20,5 +20,6 @@
 depends: python wget
 category: baseline
 satisfy_deb: python-mako >= 0.4.2
-satisfy_rpm: ((python-mako >= 0.4.2) || (python-mako0.4 >= 0.4.2))
+satisfy_rpm: python-mako >= 0.4.2
 inherit: distutils
+source: wget://https://pypi.python.org/packages/source/M/Mako/Mako-0.4.2.tar.gz
