@@ -22,8 +22,12 @@ category: baseline
 source: git://https://git-wip-us.apache.org/repos/asf/thrift.git
 gitbranch: 0.9.2
 inherit: bootstrapautoconf
+
+# The ACLOCAL_PATH variable is here if the autotools binaries were 
+# added via a src build but the pkg-config tool was added via deb/rpm
+# then the m4 files will not be in the search path of aclocal
 configure {
-    ./bootstrap.sh && ./configure --prefix=$prefix \
+    ACLOCAL_PATH=/usr/share/aclocal:$ACLOCAL_PATH ./bootstrap.sh && ./configure --prefix=$prefix \
     --with-c_glib --with-cpp --with-libevent --with-python \
     --without-csharp --without-d --without-erlang --without-go \
     --without-haskell --without-java --without-lua --without-nodejs \
